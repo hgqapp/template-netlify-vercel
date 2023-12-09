@@ -1,4 +1,4 @@
-site_name: 个人笔记分享 # Change this to your site name
+site_name: My Notes # Change this to your site name
 site_description: 个人笔记分享
 site_url: https://houguangqiang.netlify.app/ # Change this to your site URL
 
@@ -10,7 +10,7 @@ theme:
     font:
         text: Ubuntu
         code: Ubuntu Mono
-    language: en
+    language: zh
     palette:
 
     # Light mode
@@ -31,14 +31,23 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
     features:
-        - navigation.indexes
-        - navigation.top
-        - navigation.tabs
-        - navigation.tabs.sticky
-        - navigation.expand
+        - navigation.instant # 模拟单应用
+        - navigation.instant.prefetch
+        - navigation.instant.progress
+        - navigation.tracking # 锚点跟踪
+        - navigation.indexes # 上级导航也可以附加文档
+        - navigation.top # 返回顶部按钮
+        - navigation.tabs # 标签导航条
+        # - navigation.sections # 左侧导航，即顶级标题默认收缩
+        # - navigation.tabs.sticky # 固定标签导航条
+#        - navigation.expand # 展开所有左侧导航
+        - navigation.prune # 导航修剪，即部分加载
+        - navigation.path # 开启面包屑
         - search.suggest
         - search.highlight
-        
+        - content.code.copy # 代码复制按钮
+        - content.code.select # 代码选择按钮
+
 # Extensions
 markdown_extensions:
   - footnotes
@@ -62,6 +71,7 @@ markdown_extensions:
   - pymdownx.highlight:
       use_pygments: true
       anchor_linenums: true
+      pygments_lang_class: true
   - pymdownx.tasklist:
        custom_checkbox: true
   - pymdownx.emoji:
@@ -77,8 +87,14 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  # 标签卡
+  - pymdownx.tabbed:
+      alternate_style: true
 plugins:
-  - search
+  - search:
+      lang:
+        - en
+        - zn
   - meta-descriptions
   - git-revision-date-localized:
       type: date
@@ -107,6 +123,8 @@ plugins:
       password_button_text: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em" width="1em"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c17.67 0 32 14.33 32 32v256c0 17.67-14.33 32-32 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c53.02 0 96-42.98 96-96V128C512 74.98 469 32 416 32zM342.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L242.8 224H32C14.31 224 0 238.3 0 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C355.1 266.1 355.1 245.9 342.6 233.4z"/></svg>'
   - callouts
   - glightbox
+  # 博客
+  - blog
 hooks:
   - overrides/hooks/on_page_markdown.py
   - overrides/hooks/on_env.py
@@ -135,3 +153,12 @@ extra:
   hooks:
     strip_comments: true
     fix_heading: true
+  extra:
+    social:
+      - type: 'github'
+        link: 'https://github.com/hgqapp'
+      - type: 'mkdocs-material'
+        link: 'https://squidfunk.github.io/mkdocs-material'
+      - type: 'netlify'
+        link: 'https://app.netlify.com/sites/hgqapp/overview'
+
