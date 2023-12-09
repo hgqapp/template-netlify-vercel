@@ -18,19 +18,19 @@ theme:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
-      accent: light blue
+      primary: indigo
+      accent: indigo
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/toggle-switch
         name: Switch to dark mode
 
     # Dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue
+      primary: black
       accent: indigo
       toggle:
-        icon: material/toggle-switch
+        icon: material/toggle-switch-off
         name: Switch to light mode
     features:
         - navigation.instant # 模拟单应用
