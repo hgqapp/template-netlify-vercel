@@ -1,7 +1,9 @@
 site_name: My Notes # Change this to your site name
 site_description: 个人笔记分享
 site_url: https://houguangqiang.netlify.app/ # Change this to your site URL
-
+nav:
+  - Index: index.md
+  - About: about.md
 theme:
     name: 'material'
     logo: assets/meta/favicons.png
