@@ -3,6 +3,7 @@ site_description: 个人笔记分享
 site_url: https://houguangqiang.netlify.app/ # Change this to your site URL
 nav:
   - 主页: index.md
+  - 笔记: notes/
   - 博客: blog/
   - 关于: about.md
 theme:
@@ -156,12 +157,5 @@ extra:
   hooks:
     strip_comments: true
     fix_heading: true
-  extra:
-    social:
-      - type: 'github'
-        link: 'https://github.com/hgqapp'
-      - type: 'mkdocs-material'
-        link: 'https://squidfunk.github.io/mkdocs-material'
-      - type: 'netlify'
-        link: 'https://app.netlify.com/sites/hgqapp/overview'
+
 
