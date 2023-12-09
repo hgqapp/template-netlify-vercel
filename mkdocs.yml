@@ -1,11 +1,9 @@
 site_name: My Notes # Change this to your site name
 site_description: 个人笔记分享
-site_url: https://houguangqiang.netlify.app/ # Change this to your site URL
-nav:
-  - 主页: index.md
-  - 笔记: notes/
-  - 博客: blog/
-  - 关于: about.md
+site_url: https://hgqapp.netlify.app/ # Change this to your site URL
+
+copyright: Copyright &copy; 2016 - 2023 Hqg
+
 theme:
     name: 'material'
     logo: assets/meta/favicons.png
@@ -39,11 +37,11 @@ theme:
         - navigation.instant.prefetch
         - navigation.instant.progress
         - navigation.tracking # 锚点跟踪 u
-        - navigation.indexes # 上级导航也可以附加文档
+#        - navigation.indexes # 上级导航也可以附加文档
         - navigation.top # 返回顶部按钮
+        - navigation.sections # 左侧导航
         - navigation.tabs # 标签导航条
-        # - navigation.sections # 左侧导航，即顶级标题默认收缩
-        # - navigation.tabs.sticky # 固定标签导航条
+#        - navigation.tabs.sticky # 固定标签导航条
 #        - navigation.expand # 展开所有左侧导航
         - navigation.prune # 导航修剪，即部分加载
         - navigation.path # 开启面包屑
@@ -51,6 +49,10 @@ theme:
         - search.highlight
         - content.code.copy # 代码复制按钮
         - content.code.select # 代码选择按钮
+        - content.code.annotate
+        - content.tooltips
+#        - header.autohide # 标题栏自动自适应隐藏
+        - toc.follow
 
 # Extensions
 markdown_extensions:
@@ -158,4 +160,10 @@ extra:
     strip_comments: true
     fix_heading: true
 
-
+nav:
+  - 主页: index.md
+  - 笔记:
+    - notes/index.md
+  - 博客:
+    - blog/index.md
+  - 关于: about.md
