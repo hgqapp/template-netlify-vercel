@@ -149,7 +149,8 @@ plugins:
   - callouts
   - glightbox
   # 博客
-  - blog
+  - blog:
+      blog_dir: .
 hooks:
   - overrides/hooks/on_page_markdown.py
   - overrides/hooks/on_env.py
