@@ -33,61 +33,73 @@ theme:
         icon: material/toggle-switch-off
         name: Switch to light mode
     features:
-        - navigation.instant # 模拟单应用
-        - navigation.instant.prefetch
-        - navigation.instant.progress
-        - navigation.tracking # 锚点跟踪 u
-#        - navigation.indexes # 上级导航也可以附加文档
-        - navigation.top # 返回顶部按钮
+        - announce.dismiss
+        - content.code.annotate
+        - content.code.copy # 代码复制按钮
+        - content.code.select # 代码选择按钮
+#        - content.tabs.link
+        - content.tooltips
+#        - header.autohide # 标题栏自动自适应隐藏
+#        - navigation.expand # 展开所有左侧导航
+        - navigation.footer
+        - navigation.indexes # 上级导航也可以附加文档
+#        - navigation.instant # 模拟单应用
+#        - navigation.instant.prefetch
+#        - navigation.instant.progress
+#        - navigation.prune # 导航修剪，即部分加载
         - navigation.sections # 左侧导航
         - navigation.tabs # 标签导航条
 #        - navigation.tabs.sticky # 固定标签导航条
-#        - navigation.expand # 展开所有左侧导航
-        - navigation.prune # 导航修剪，即部分加载
-        - navigation.path # 开启面包屑
-        - search.suggest
+        - navigation.top # 返回顶部按钮
+        - navigation.tracking # 锚点跟踪 u
+#        - navigation.path # 开启面包屑
         - search.highlight
-        - content.code.copy # 代码复制按钮
-        - content.code.select # 代码选择按钮
-        - content.code.annotate
-        - content.tooltips
-#        - header.autohide # 标题栏自动自适应隐藏
+        - search.share
+        - search.suggest
         - toc.follow
+#       - toc.integrate
 
 # Extensions
 markdown_extensions:
-  - footnotes
-  - nl2br
-  - attr_list
-  - sane_lists
-  - meta
-  - smarty
-  - tables
-  - mdx_breakless_lists
+  - abbr # 缩写
+  - admonition # 警告
+  - attr_list # 属性列表
   - def_list
+  - footnotes # 脚注
+  - md_in_html
+  - meta # 元数据
+  - tables # 表格扩展
+  - toc:
+      permalink: true # 内容大纲
+  - nl2br
+  - sane_lists
+  - smarty
+  - mdx_breakless_lists
   - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.details
-  - pymdownx.magiclink
-  - pymdownx.critic
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.highlight:
-      use_pygments: true
-      anchor_linenums: true
-      pygments_lang_class: true
-  - pymdownx.tasklist:
-       custom_checkbox: true
+      generic: true       # 公式
+  - pymdownx.betterem:
+      smart_enable: all   # 更好的标记
+  - pymdownx.caret        # 插入符号扩展
+  - pymdownx.details      # Admonition 增强
   - pymdownx.emoji:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
       emoji_index: !!python/name:material.extensions.emoji.twemoji
-  - admonition
-  - toc:
-      permalink: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.critic
+  - pymdownx.highlight:   # 语法高亮
+      use_pygments: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite # 内联代码块的支持
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark         # 标记扩展
+  - pymdownx.smartsymbols # 智能符号
+  - pymdownx.snippets     # 片段
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -96,6 +108,13 @@ markdown_extensions:
   # 标签卡
   - pymdownx.tabbed:
       alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+       custom_checkbox: true
+  - pymdownx.tilde        # 标题扩展
 plugins:
   - search:
       lang:
@@ -159,6 +178,17 @@ extra:
   hooks:
     strip_comments: true
     fix_heading: true
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/squidfunk
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/mkdocs-material/
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/squidfunk
 
 nav:
   - 主页: index.md
