@@ -150,7 +150,7 @@ plugins:
   - glightbox
   # 博客
   - blog:
-      blog_dir: .
+      blog_dir: blog
 hooks:
   - overrides/hooks/on_page_markdown.py
   - overrides/hooks/on_env.py
