@@ -153,14 +153,11 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/squidfunk
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/mkdocs-material/
-    - icon: fontawesome/brands/mastodon
-      link: https://fosstodon.org/@squidfunk
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/squidfunk
+    - icon: simple/materialformkdocs
+      link: https://squidfunk.github.io/mkdocs-material
+    - icon: simple/netlify
+      link: https://app.netlify.com/sites/hgqapp/overview
+
 
 nav:
   - 主页:
