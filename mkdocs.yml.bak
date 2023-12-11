@@ -1,0 +1,200 @@
+site_name: My Notes # Change this to your site name
+site_description: 个人笔记分享
+site_url: https://hgqapp.netlify.app/ # Change this to your site URL
+
+copyright: Copyright &copy; 2016 - 2023 Hqg
+
+theme:
+    name: 'material'
+    logo: assets/meta/logo.png
+    favicon: assets/meta/favicon.ico
+    custom_dir: overrides
+    font:
+        text: Ubuntu
+        code: Ubuntu Mono
+    language: zh
+    palette:
+
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to light mode
+    features:
+        - announce.dismiss
+        - content.code.annotate
+        - content.code.copy # 代码复制按钮
+        - content.code.select # 代码选择按钮
+#        - content.tabs.link
+        - content.tooltips
+#        - header.autohide # 标题栏自动自适应隐藏
+#        - navigation.expand # 展开所有左侧导航
+        - navigation.footer
+        - navigation.indexes # 上级导航也可以附加文档
+#        - navigation.instant # 模拟单应用
+#        - navigation.instant.prefetch
+#        - navigation.instant.progress
+#        - navigation.prune # 导航修剪，即部分加载
+        - navigation.sections # 左侧导航
+        - navigation.tabs # 标签导航条
+#        - navigation.tabs.sticky # 固定标签导航条
+        - navigation.top # 返回顶部按钮
+        - navigation.tracking # 锚点跟踪 u
+#        - navigation.path # 开启面包屑
+        - search.highlight
+        - search.share
+        - search.suggest
+        - toc.follow
+#       - toc.integrate
+
+# Extensions
+markdown_extensions:
+  - abbr # 缩写
+  - admonition # 警告
+  - attr_list # 属性列表
+  - def_list
+  - footnotes # 脚注
+  - md_in_html
+  - meta # 元数据
+  - tables # 表格扩展
+  - toc:
+      permalink: true # 内容大纲
+  - nl2br
+  - sane_lists
+  - smarty
+  - mdx_breakless_lists
+  - pymdownx.arithmatex:
+      generic: true       # 公式
+  - pymdownx.betterem:
+      smart_enable: all   # 更好的标记
+  - pymdownx.caret        # 插入符号扩展
+  - pymdownx.details      # Admonition 增强
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.critic
+  - pymdownx.highlight:   # 语法高亮
+      use_pygments: true
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite # 内联代码块的支持
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark         # 标记扩展
+  - pymdownx.smartsymbols # 智能符号
+  - pymdownx.snippets     # 片段
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # 标签卡
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+       custom_checkbox: true
+  - pymdownx.tilde        # 标题扩展
+plugins:
+  - search:
+      lang:
+        - en
+        - zn
+  - meta-descriptions
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+      locale: en
+      custom_format: "%A %d %B %Y"
+      enable_creation_date: true
+  - ezlinks:
+        wikilinks: true
+  - awesome-pages
+  - embed_file:
+      callouts: true
+      custom-attributes: 'assets/css/custom_attributes.css'
+  - custom-attributes:
+      file: 'assets/css/custom_attributes.css'
+  - tags:
+      tags_file: tags.md
+  - encryptcontent:
+      title_prefix: '🔐'
+      summary: 'Private page'
+      placeholder: 'Password'
+      decryption_failure_message: 'Invalid password'
+      encryption_info_message: "You don't have access to this page."
+      search_index: 'encrypted'
+      password_button: True
+      password_button_text: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em" width="1em"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c17.67 0 32 14.33 32 32v256c0 17.67-14.33 32-32 32h-64c-17.67 0-32 14.33-32 32s14.33 32 32 32h64c53.02 0 96-42.98 96-96V128C512 74.98 469 32 416 32zM342.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L242.8 224H32C14.31 224 0 238.3 0 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C355.1 266.1 355.1 245.9 342.6 233.4z"/></svg>'
+  - callouts
+  - glightbox
+  # 博客
+  - blog:
+      blog_dir: blog
+hooks:
+  - overrides/hooks/on_page_markdown.py
+  - overrides/hooks/on_env.py
+  - overrides/hooks/on_files.py
+extra_javascript:
+  - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/javascript.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+    - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+    - https://cdn.jsdelivr.net/gh/ObsidianPublisher/assets@main/dist/styles.css
+    - assets/css/admonition.css
+    - assets/css/custom_attributes.css
+    - assets/css/customization.css
+extra:
+  SEO: assets/meta/SEO.png
+  comments: false #disable comments globally
+  generate_graph: false #generate the graph of the site
+  attachments: 'assets/img' #path to the folder where the attachments are stored
+  no-auto-h1: false #disable the automatic generation of h1 if no h1 is found
+  blog_list:
+    pagination: true #enable pagination
+    pagination_message: true #display the message "Showing x posts out of y"
+    pagination_translation: 'posts in' #message to display before the number of posts ; Add your own translation!
+    no_page_found: "No pages found!" #message to display when no pages are found ; Add your own translation!
+  hooks:
+    strip_comments: true
+    fix_heading: true
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/squidfunk
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/mkdocs-material/
+    - icon: fontawesome/brands/mastodon
+      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/squidfunk
+
+nav:
+  - 主页: index.md
+  - 笔记:
+    - notes/index.md
+  - 博客:
+    - blog/index.md
+  - 关于: about.md

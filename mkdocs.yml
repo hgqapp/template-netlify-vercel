@@ -123,7 +123,7 @@ plugins:
       minify_html: true
 
 hooks:
-  - overrides/hooks/on_page_markdown.py
+#  - overrides/hooks/on_page_markdown.py
   - overrides/hooks/on_env.py
   - overrides/hooks/on_files.py
 extra_javascript:
