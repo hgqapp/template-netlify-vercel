@@ -152,7 +152,7 @@ extra:
     fix_heading: true
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/squidfunk
+      link: https://github.com/hgqapp
     - icon: simple/materialformkdocs
       link: https://squidfunk.github.io/mkdocs-material
     - icon: simple/netlify
@@ -161,9 +161,10 @@ extra:
 
 nav:
   - 主页:
-    - home/index.md
+    - 主页: home/index.md
   - 笔记:
-    - notes/index.md
+    - 笔记: notes/index.md
   - 博客:
-    - blog/index.md
-  - 关于: about.md
+    - 博客: blog/index.md
+  - 关于:
+    - 关于: about.md
