@@ -163,7 +163,8 @@ extra:
       link: https://twitter.com/squidfunk
 
 nav:
-  - 主页: index.md
+  - 主页:
+    - home/index.md
   - 笔记:
     - notes/index.md
   - 博客:
